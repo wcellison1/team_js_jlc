@@ -11,8 +11,14 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   
+
 }
+.item-checked {
+  text-decoration: line-through;
+}
+
 </style>
+
   <div class="page-header">
   <div style="color: {{vm.shoppinglist.color}}">
     <h1 ng-bind="vm.shoppinglist.name"></h1>
@@ -75,10 +81,10 @@ body {
     <tbody style="color: {{vm.shoppinglist.color}}" >
       <tr ng-repeat="item in vm.shoppinglist.items | orderBy:orderByField:reverseSort">
         <td><input type="checkbox" ng-checked="item.isChecked" ng-click="vm.isChecked(item)"/></td>
-        <td ng-class="{'item-done' : item.isChecked}">{{item.name}}</td>
-        <td ng-class="{'item-done' : item.isChecked}">{{item.quantity}}</td>
-        <td ng-class="{'item-done' : item.isChecked}">{{item.priority}}</td>
-        <td ng-class="{'item-done' : item.isChecked}">{{item.note}}</td>
+        <td ng-class="{'item-checked' : item.isChecked}">{{item.name}}</td>
+        <td ng-class="{'item-checked' : item.isChecked}">{{item.quantity}}</td>
+        <td ng-class="{'item-checked' : item.isChecked}">{{item.priority}}</td>
+        <td ng-class="{'item-checked' : item.isChecked}">{{item.note}}</td>
         <td><span class="fa fa-times" ng-click="vm.removeItem(item)"></span></td>
       </tr>
     </tbody>
