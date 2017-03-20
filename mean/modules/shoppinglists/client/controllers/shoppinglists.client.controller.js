@@ -24,8 +24,7 @@
     vm.orderbyField = vm.name;
     vm.reverseSort= false;
     vm.isChecked = isChecked;
-    // vm.listColor = '#000000';
-    // Remove existing Shoppinglist
+  
 
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {

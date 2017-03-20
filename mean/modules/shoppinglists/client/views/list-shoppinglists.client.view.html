@@ -17,33 +17,29 @@ body {
     <h1>Saved Shopping Lists <button ui-sref="shoppinglists.create" class="btn btn-success btn-md">Add New List</button></h1>
 
   </div>
-  <div class="list-group">
-  <div class="col-xs-6 col-sm-4" style="padding-bottom:30px"
+   <div class="list-group">
+    <div class="col-xs-6 col-sm-4" style="padding-bottom:30px"
     ng-repeat="shoppinglist in vm.shoppinglists">
-       <a ui-sref="shoppinglists.view({ shoppinglistId: shoppinglist._id })"
+      <a ui-sref="shoppinglists.view({ shoppinglistId: shoppinglist._id })"
        class="list-group-item">
         <h4 class="list-group-item-heading" ng-bind="shoppinglist.name"></h4>
-
-      <small class="list-group-item-text">
+         <small class="list-group-item-text">
         Created on
-        <span ng-bind="shoppinglist.created | date:'medium'"></span>
-        by
-        <span ng-if="shoppinglist.user" ng-bind="shoppinglist.user.displayName"></span>
-        <span ng-if="!shoppinglist.user">Deleted User</span>
-      </small>
-      <br>
-      <small class="list-group-item-text">
-      Updated on 
-      <span ng-bind="shoppinglist.updated | date:'medium'"></span>
-      by
-      <span ng-if="shoppinglist.user"
+          <span ng-bind="shoppinglist.created | date:'medium'"></span>
+           by
+           <span ng-if="shoppinglist.user" ng-bind="shoppinglist.user.displayName"></span>
+            <span ng-if="!shoppinglist.user">Deleted User</span>
+           </small>
+            <br>
+             <small class="list-group-item-text">
+              Updated on 
+              <span ng-bind="shoppinglist.updated | date:'medium'"></span>
+               by
+               <span ng-if="shoppinglist.user"
             ng-bind="shoppinglist.user.displayName"></span>
-      <span ng-if="!shoppinglist.user">Deleted User</span>
-       </small>
-    </a>
-  </div>
-  </div>
-  <!--<div class="alert alert-warning text-center" ng-if="vm.shoppinglists.$resolved && !vm.shoppinglists.length">
-    No Shoppinglists yet, why don't you <a ui-sref="shoppinglists.create">create one</a>?
-  </div>-->
+                <span ng-if="!shoppinglist.user">Deleted User</span>
+           </small>
+         </a>
+       </div>
+     </div>
 </section>

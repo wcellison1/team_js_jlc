@@ -18,28 +18,23 @@ body {
 }
 
 </style>
-
-  <div class="page-header">
+ <div class="page-header">
   <div style="color: {{vm.shoppinglist.color}}">
-    <h1 ng-bind="vm.shoppinglist.name"></h1>
-
+   <h1 ng-bind="vm.shoppinglist.name"></h1>
   </div>
-    <small>
+   <small>
     <em>
       Updated on 
-      <span ng-bind="vm.shoppinglist.updated | date:'medium'"></span>
+     <span ng-bind="vm.shoppinglist.updated | date:'medium'"></span>
       by
       <span ng-if="vm.shoppinglist.user"
             ng-bind="vm.shoppinglist.user.displayName"></span>
-      <span ng-if="!vm.shoppinglist.user">Deleted User</span>
+       <span ng-if="!vm.shoppinglist.user">Deleted User</span>
     </em>
-    </small>
-
-  </div>
-
-  
+   </small>
+ </div>
   <div>
-    <form name="vm.form.shoppinglistItemForm" ng-submit="vm.addItem(vm.form.shoppinglistItemForm.$valid)" novalidate>
+   <form name="vm.form.shoppinglistItemForm" ng-submit="vm.addItem(vm.form.shoppinglistItemForm.$valid)" novalidate>
     <table class="table">
       <thead>
         <tr>          
@@ -54,24 +49,22 @@ body {
           <th><input type="text" name="item" ng-model="vm.name"></th>
           <th><input type="text" name="quantity" ng-model="vm.quantity"></th>
           <th><select type="text" name="priority" ng-model="vm.priority">
-          
               <option>Right Now</option>
               <option>Will Need Soon</option>
               <option>Whenever</option>
             </select></th>
-            <th><input type="text" name="note" ng-model="vm.note" /></th>
-          <td><button type="submit" class="btn btn-success" >Add</button></td>
+          <th><input type="text" name="note" ng-model="vm.note" /></th>
+         <td><button type="submit" class="btn btn-success" >Add</button></td>
         </tr>
       </thead>
     </table>
-    </form>
-  </div>
-
+  </form>
+</div>
   <table class="table">
     <thead>
       <tr>
         <th style="width: 5%">Done</th>
-        <th style="width: 20%"><a href="#" style="color: black" ng-click="orderByField= 'name'; reverseSort = !reverseSort">Item</a></th>
+        <th style="width: 20%"><a href="#" style="color: black" ng-click="orderByField= 'name'; reverseSort = !reverseSort">Items</a></th>
         <th style="width: 25%"><a href="#" style="color: black" ng-click="orderByField='quantity'; reverseSort = !reverseSort">Quantity </a></th>
         <th style="width: 20%"><a href="#" style="color: black" ng-click="orderByField='priority'; reverseSort = !reverseSort">Priority</a></th>
         <th style="width: 20%">Notes</th>
@@ -89,27 +82,25 @@ body {
       </tr>
     </tbody>
   </table>
-
-  <button class="btn btn-success" type="button" ng-click="vm.deleteChecked()">Removed Checked</button>
-
-  <div class="pull-right">
-    <a class="btn btn-success"
+    <button class="btn btn-success" type="button" ng-click="vm.deleteChecked()">Removed Checked</button>
+     <div class="pull-right">
+      <a class="btn btn-success"
        ui-sref="shoppinglists.edit({ shoppinglistId: vm.shoppinglist._id })">
-      <i class="glyphicon glyphicon-edit"></i>
-    </a>
+       <i class="glyphicon glyphicon-edit"></i>
+      </a>
     <a class="btn btn-success" ng-click="vm.remove()">
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
-  <small>
-    <em>
-      Created on
-      <span ng-bind="vm.shoppinglist.created | date:'medium'"></span>
+<small>
+  <em>
+   Created on
+    <span ng-bind="vm.shoppinglist.created | date:'medium'"></span>
       by
       <span ng-if="vm.shoppinglist.user"
             ng-bind="vm.shoppinglist.user.displayName"></span>
-      <span ng-if="!vm.shoppinglist.user">Deleted User</span>
-    </em>
-  </small>
+       <span ng-if="!vm.shoppinglist.user">Deleted User</span>
+  </em>
+</small>
   <p class="lead" ng-bind="vm.shoppinglist.content"></p>
 </section>
